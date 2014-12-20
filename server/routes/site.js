@@ -2,6 +2,6 @@
 
 var SiteController = require('../controllers/site-controller')();
 
-module.exports = function(app, config) {
+module.exports = function(app) {
   app.get('/', SiteController.index);
 };

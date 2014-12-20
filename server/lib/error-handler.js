@@ -4,6 +4,8 @@ var Boom = require('boom');
 
 module.exports = function() {
   return function(err, req, res, next) {
+    if (!err instanceof Error) { return next(); }
+
     switch (err.name) {
     case 'ValidationError':
       err = Boom.wrap(err, 422, err.message || 'Validation failed');
@@ -12,7 +14,7 @@ module.exports = function() {
       }
       break;
     case 'MongoError':
-      if (11000 === err.code || 11001 === err.code) { // Duplicate key errors
+      if (err.code === 11000 || err.code === 11001) { // Duplicate key errors
         err = Boom.wrap(err, 422, err.message);
       }
       break;

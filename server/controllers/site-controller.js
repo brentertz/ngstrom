@@ -2,7 +2,7 @@
 
 module.exports = function() {
   var SiteController = {
-    index: function(req, res, next) {
+    index: function(req, res) {
       res.render('index', { title: 'ngstrom' });
     }
   };

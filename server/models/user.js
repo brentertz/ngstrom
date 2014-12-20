@@ -1,10 +1,8 @@
 'use strict';
 
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var ObjectId = Schema.ObjectId;
 
-var schema = mongoose.Schema({
+var schema = new mongoose.Schema({
   firstName: {
     type: String,
     trim: true,
@@ -38,4 +36,3 @@ var schema = mongoose.Schema({
 module.exports = function() {
   return mongoose.model('User', schema);
 };
-

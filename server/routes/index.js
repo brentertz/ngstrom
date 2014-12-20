@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(app, config) {
-  require('./site')(app, config);
-  require('./api')(app, config);
+module.exports = function(app) {
+  require('./site')(app);
+  require('./api')(app);
 };
