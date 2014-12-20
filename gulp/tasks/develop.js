@@ -5,7 +5,7 @@ var nodemon = require('gulp-nodemon');
 
 module.exports = gulp.task('develop', function() {
   nodemon({
-    script: 'app.js',
+    script: 'src/server/app.js',
     ext: 'html js'
   })
   .on('change', ['lint', 'test']);

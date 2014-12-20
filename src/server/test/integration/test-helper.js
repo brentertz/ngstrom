@@ -27,7 +27,9 @@ before(function(done) {
 });
 
 after(function(done) {
-  this.server.close(done);
+  this.server.close();
+  app.services.database.db.close();
+  done();
 });
 
 beforeEach(function() {

@@ -7,5 +7,5 @@ module.exports = function(app) {
   app.get('/api/users/:id', UsersController.show);
   app.post('/api/users', UsersController.create);
   app.put('/api/users/:id', UsersController.update);
-  app.del('/api/users/:id', UsersController.destroy);
+  app.delete('/api/users/:id', UsersController.destroy);
 };

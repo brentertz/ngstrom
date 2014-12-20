@@ -1,12 +1,12 @@
 {
-  "name": "ngstrom-server",
-  "version": "0.0.1",
+  "name": "ngstrom",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./app",
-    "start:debug": "nodemon --debug ./app",
+    "start": "node ./src/server/app",
+    "start:debug": "nodemon --debug ./src/server/app",
     "test": "gulp test",
-    "test:debug": "nodemon --debug-brk `which grunt` test"
+    "test:debug": "nodemon --debug-brk `which gulp` test"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -27,6 +27,7 @@
     "debug": "^2.1.0",
     "gulp": "^3.8.10",
     "gulp-eslint": "^0.2.0",
+    "gulp-exit": "0.0.2",
     "gulp-mocha": "^2.0.0",
     "gulp-nodemon": "^1.0.4",
     "mocha": "^2.0.1",

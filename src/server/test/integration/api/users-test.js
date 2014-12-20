@@ -1,9 +1,11 @@
+'use strict';
+
 var helpers = require('../test-helper');
 var expect = helpers.expect;
 var request = helpers.request;
 
 describe('api/users', function() {
-  context('index', function() {
+  describe('index', function() {
     beforeEach(function(done) {
       var self = this;
       request(this.server)
@@ -23,7 +25,7 @@ describe('api/users', function() {
     });
   });
 
-  context('create', function() {
+  describe('create', function() {
     beforeEach(function(done) {
       var self = this;
       request(this.server)

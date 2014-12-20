@@ -9,7 +9,7 @@ module.exports = function() {
     index: function(req, res, next) {
       User.find(function(err, users) {
         if (err) { return next(err); }
-        res.json(200, users);
+        res.status(200).json(users);
       });
     },
 
@@ -17,7 +17,7 @@ module.exports = function() {
       User.findById(req.params.id, function(err, user) {
         if (err) { return next(err); }
         if (!user) { return next(Boom.notFound('User not found')); }
-        res.json(200, user);
+        res.status(200).json(user);
       });
     },
 
@@ -25,7 +25,7 @@ module.exports = function() {
       var user = new User(req.body);
       user.save(function(err, user) {
         if (err) { return next(err); }
-        res.json(201, user);
+        res.status(201).json(user);
       });
     },
 
@@ -35,7 +35,7 @@ module.exports = function() {
         _.extend(user, req.body);
         user.save(function(err) {
           if (err) { return next(err); }
-          res.json(200, user);
+          res.status(200).json(user);
         });
       });
     },
