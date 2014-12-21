@@ -1,8 +1,9 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var schema = new mongoose.Schema({
+var userSchema = new Schema({
   firstName: {
     type: String,
     trim: true,
@@ -34,5 +35,5 @@ var schema = new mongoose.Schema({
 });
 
 module.exports = function() {
-  return mongoose.model('User', schema);
+  return mongoose.model('User', userSchema);
 };

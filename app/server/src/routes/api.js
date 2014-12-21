@@ -1,8 +1,8 @@
 'use strict';
 
-var UsersController = require('../controllers/api/users-controller')();
-
 module.exports = function(app) {
+  var UsersController = require('../controllers/api/users-controller')();
+
   app.get('/api/users', UsersController.index);
   app.get('/api/users/:id', UsersController.show);
   app.post('/api/users', UsersController.create);
