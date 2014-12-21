@@ -14,10 +14,13 @@ module.exports = {
         images: './app/client/src/assets/images/**/*',
         index: './app/client/src/index.html',
         root: './app/client/src',
-        scripts: './app/client/src/**/*.js',
+        scripts: {
+          glob: './app/client/src/**/*.js',
+          main: './app/client/src/index.js'
+        },
         styles: {
-          main: './app/client/src/styles/app.less',
-          glob: './app/client/src/**/*.less'
+          glob: './app/client/src/**/*.less',
+          main: './app/client/src/styles/app.less'
         }
       },
       build: {
@@ -31,6 +34,11 @@ module.exports = {
       test: './app/client/test/**/*-test.js'
     },
     server: {
+      src: {
+        scripts: {
+          main: './app/server/src/app.js'
+        }
+      },
       test: './app/server/test/**/*-test.js'
     }
   }

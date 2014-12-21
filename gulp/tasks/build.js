@@ -7,7 +7,7 @@ module.exports = function(config) {
   return gulp.task('build', function(callback) {
     runSequence(
       ['clean', 'lint'],
-      ['browserify', 'styles', 'assets', 'images', 'index'],
+      ['scripts', 'styles', 'assets', 'images', 'index'],
       callback
     );
   });

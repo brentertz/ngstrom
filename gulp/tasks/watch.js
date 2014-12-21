@@ -5,7 +5,7 @@ var watch = require('gulp-watch');
 
 module.exports = function(config) {
   return gulp.task('watch', function() {
-    watch(config.get('paths.client.src.scripts'), function() {
+    watch(config.get('paths.client.src.scripts.glob'), function() {
       gulp.start('lint'); // NOTE: watchify will handle script updates
     });
 

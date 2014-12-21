@@ -6,21 +6,19 @@ var csso = require('gulp-csso');
 var autoprefixer = require('gulp-autoprefixer');
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
+var handleErrors = require('../util/handle-errors');
 
 module.exports = function(config) {
   return gulp.task('styles', function() {
     var production = config.get('env') === 'production';
-    var optimizeCss = production;
+    var minify = production;
     var useSourceMaps = !production;
 
     return gulp.src(config.get('paths.client.src.styles.main'))
       .pipe(gulpif(useSourceMaps, sourcemaps.init()))
-      .pipe(less().on('error', function(err) {
-        console.log(err.toString());
-        this.emit('end');
-      }))
+      .pipe(less().on('error', handleErrors))
       .pipe(autoprefixer('last 1 version'))
-      .pipe(gulpif(optimizeCss, csso()))
+      .pipe(gulpif(minify, csso()))
       .pipe(gulpif(useSourceMaps, sourcemaps.write()))
       .pipe(gulp.dest(config.get('paths.client.build.styles')));
   });
