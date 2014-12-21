@@ -1,8 +1,10 @@
 env:
   node: true
+  mocha: true
 
 rules:
   global-strict: [2, "always"]
+  no-unused-vars: [2, {"vars": "local", "args": "none"}]
   padded-blocks: [2, "never"]
   quotes: [2, "single", "avoid-escape"]
   space-after-keywords: [2, "always"]

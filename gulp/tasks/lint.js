@@ -2,11 +2,12 @@
 
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
-var config = require('config');
 
-module.exports = gulp.task('lint', function() {
-  return gulp.src(config.get('paths.client.src.scripts'))
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failOnError());
-});
+module.exports = function(config) {
+  return gulp.task('lint', function() {
+    return gulp.src(['**/*.js', '!node_modules/**/*'])
+      .pipe(eslint())
+      .pipe(eslint.format())
+      .pipe(eslint.failOnError());
+  });
+};

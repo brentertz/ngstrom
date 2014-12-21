@@ -2,6 +2,8 @@
 
 var gulp = require('gulp');
 
-module.exports = gulp.task('browserify', function() {
+module.exports = function(config) {
+  return gulp.task('browserify', function() {
 
-});
+  });
+};
