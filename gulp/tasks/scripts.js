@@ -8,7 +8,7 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
-var handleErrors = require('../util/handle-errors');
+var handleError = require('../util/handle-error');
 
 module.exports = function(config) {
   var production = config.get('env') === 'production';
@@ -25,7 +25,7 @@ module.exports = function(config) {
   var bundle = function() {
     return bundler
       .bundle()
-      .on('error', handleErrors)
+      .on('error', handleError)
       .pipe(gulpif(minify, source('index.min.js'), source('index.js')))
       .pipe(buffer())
       .pipe(gulpif(useSourceMaps, sourcemaps.init({ loadMaps: true })))

@@ -6,7 +6,7 @@ var csso = require('gulp-csso');
 var autoprefixer = require('gulp-autoprefixer');
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
-var handleErrors = require('../util/handle-errors');
+var handleError = require('../util/handle-error');
 
 module.exports = function(config) {
   return gulp.task('styles', function() {
@@ -16,7 +16,7 @@ module.exports = function(config) {
 
     return gulp.src(config.get('paths.client.src.styles.main'))
       .pipe(gulpif(useSourceMaps, sourcemaps.init()))
-      .pipe(less().on('error', handleErrors))
+      .pipe(less().on('error', handleError))
       .pipe(autoprefixer('last 1 version'))
       .pipe(gulpif(minify, csso()))
       .pipe(gulpif(useSourceMaps, sourcemaps.write()))

@@ -33,8 +33,12 @@ module.exports = {
       },
       test: './app/client/test/**/*-test.js'
     },
+    config: {
+      root: './config'
+    },
     server: {
       src: {
+        root: './app/server/src',
         scripts: {
           main: './app/server/src/app.js'
         }

@@ -4,11 +4,17 @@ var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
 
 module.exports = function(config) {
-  return gulp.task('develop', function() {
+  return gulp.task('develop', ['build', 'watch'], function() {
     nodemon({
       script: config.get('paths.server.src.scripts.main'),
-      ext: 'html js'
+      ext: 'html js',
+      ignore: ['node_modules/**'],
+      watch: [
+        config.get('paths.config.root'),
+        config.get('paths.server.src.root')
+      ],
+      nodeArgs: ['--debug']
     })
-    .on('change', ['lint', 'test']);
+    .on('change', ['lint']);
   });
 };
