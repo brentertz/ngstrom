@@ -2,6 +2,9 @@ env:
   node: true
   mocha: true
 
+globals:
+  angular: true
+
 rules:
   global-strict: [2, "always"]
   no-unused-vars: [2, {"vars": "local", "args": "none"}]
