@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(app) {
-  var UsersController = require('../controllers/api/users-controller')();
+  var UsersController = require('../../controllers/api/users-controller')();
 
   app.get('/api/users', UsersController.index);
   app.get('/api/users/:id', UsersController.show);
