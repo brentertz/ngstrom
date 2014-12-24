@@ -1,24 +1,22 @@
 'use strict';
 
 module.exports =
-  angular.module('ngstrom.articles', ['ui.router'])
-    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  angular.module('ngstrom.articles', ['ui.router', 'restangular', 'common.services'])
+    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, ArticlesService) {
       $stateProvider
         .state('articles', {
           abstract: true,
           url: '/articles',
-          template: require('./articles.html'),
-          controller: 'ArticlesController'
+          template: require('./articles.html')
         })
         .state('articles.list', {
           url: '',
-          template: require('./articles-list.html')
+          template: require('./articles-list.html'),
+          controller: 'ArticlesListController'
         })
         .state('articles.detail', {
-          url: '/:id',
+          url: '/:articleId',
           template: require('./articles-detail.html'),
-          controller: ['$scope', '$stateParams', function($scope, $stateParams) {
-            $scope.article = $scope.articles[$stateParams.id];
-          }]
+          controller: 'ArticlesDetailController'
         });
     }]);

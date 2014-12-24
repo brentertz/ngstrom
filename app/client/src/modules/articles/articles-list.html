@@ -1,5 +1,5 @@
 <ul>
   <li ng-repeat="article in articles">
-    <a ui-sref="articles.detail({ id: article.id })">{{article.title}}</a>
+    <a ui-sref="articles.detail({ articleId: article._id })">{{article.title}}</a>
   </li>
 </ul>

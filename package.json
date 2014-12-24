@@ -58,10 +58,14 @@
   "browser": {
     "angular": "./bower_components/angular/angular.js",
     "angular-ui-bootstrap": "./bower_components/angular-bootstrap/ui-bootstrap.js",
-    "angular-ui-router": "./bower_components/angular-ui-router/release/angular-ui-router.js"
+    "angular-ui-router": "./bower_components/angular-ui-router/release/angular-ui-router.js",
+    "restangular": "./bower_components/restangular/dist/restangular.js"
   },
   "browserify-shim": {
-    "angular": "angular"
+    "angular": "angular",
+    "restangular": {
+      "depends": ["angular", "lodash:_"]
+    }
   },
   "browserify": {
     "transform": [
