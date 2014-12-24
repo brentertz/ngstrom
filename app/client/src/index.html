@@ -5,7 +5,13 @@
     <link rel="stylesheet" href="/app.css">
   </head>
   <body>
-    <div ui-view=""></div>
+    <ul class="nav">
+      <li ng-class="{ active: $state.includes('home') }"><a ui-sref="home">Home</a></li>
+      <li ng-class="{ active: $state.includes('articles.list') }"><a ui-sref="articles.list">All Articles</a></li>
+    </ul>
+
+    <div ui-view></div>
+
     <script src="<%= env === 'production' ? '/index.min.js' : '/index.js' %>"></script>
   </body>
 </html>
