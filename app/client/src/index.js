@@ -5,8 +5,8 @@ require('angular-ui-bootstrap');
 require('angular-ui-router');
 require('restangular');
 
-require('./modules/home');
-require('./modules/articles');
+require('./modules/app/home');
+require('./modules/app/articles');
 require('./modules/common/services/lodash-service');
 
 angular.module('ngstrom', [
