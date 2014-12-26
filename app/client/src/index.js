@@ -21,6 +21,7 @@ angular.module('ngstrom', [
 }])
 .config(['RestangularProvider', function(RestangularProvider) {
   RestangularProvider.setBaseUrl('/api');
+  RestangularProvider.setRestangularFields({ id: '_id' });
 }])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
