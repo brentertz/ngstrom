@@ -5,11 +5,13 @@ require('angular-ui-bootstrap');
 require('angular-ui-router');
 require('restangular');
 
+require('./modules/app/main');
 require('./modules/app/home');
 require('./modules/app/articles');
 require('./modules/common/services/lodash-service');
 
 angular.module('ngstrom', [
+  'ngstrom.main',
   'ngstrom.home',
   'ngstrom.articles'
 ])
