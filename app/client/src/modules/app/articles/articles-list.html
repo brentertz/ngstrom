@@ -1,5 +1,18 @@
-<ul>
-  <li ng-repeat="article in articles">
-    <a ui-sref="articles.detail({ articleId: article._id })">{{article.title}}</a>
-  </li>
-</ul>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="article in articles">
+        <th scope="row">{{article._id}}</th>
+        <td>
+          <a ui-sref="articles.detail({ articleId: article._id })">{{article.title}}</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
