@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./app/server/src/app",
-    "start:debug": "nodemon --debug ./app/server/src/app",
+    "start": "node ./app/server/src/index.js",
+    "start:debug": "nodemon --debug ./app/server/src/index.js",
     "test": "gulp test",
     "test:debug": "nodemon --debug-brk `which gulp` test"
   },
