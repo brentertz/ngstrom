@@ -40,7 +40,7 @@ module.exports = {
       src: {
         root: './app/server/src',
         scripts: {
-          main: './app/server/src/app.js'
+          main: './app/server/src/index.js'
         }
       },
       test: './app/server/test/**/*-test.js'
